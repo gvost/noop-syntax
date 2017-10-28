@@ -1,0 +1,92 @@
+@import "variables";
+
+atom-text-editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  .gutter-container {
+    outline: 1px solid black;
+    box-shadow: 3px 0 4px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  .scroll-view {
+    padding-left: 10px;
+  }
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .line.cursor-line {
+    background-color: @syntax-background-color;
+  }
+
+  .gutter {
+    background-color: @syntax-background-color;
+    color: @very-dark-gray;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-background-color;
+      }
+      &.git-line-renamed {
+        border-left-width: 1px;
+        border-left-style: solid;
+        color: @syntax-color-renamed!important;
+      }
+      &.git-line-added {
+        border-left-width: 1px;
+        border-left-style: solid;
+        color: @syntax-color-added!important;
+      }
+      &.git-line-modified {
+        border-left-width: 1px;
+        border-left-style: solid;
+        color: @syntax-color-modified!important;
+      }
+      &.git-line-removed {
+        border-left-width: 1px;
+        border-left-style: solid;
+        color: @syntax-color-removed!important;
+      }
+
+      &.cursor-line-no-selection {
+        color: white!important;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @light-gray;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+    color: @black;
+  }
+}
+
+// Mini editor
+atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
